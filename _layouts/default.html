@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ page.title }} / {{ site.title }}</title>
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand">
+		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css">
+	</head>
+
+	<body>
+		<div class="titlebar">
+			<img class="avatar" src="/img/avatar.jpg">
+			<div class="details">
+				<div>
+					<div class="fullname">Nándor Szalma</div>
+					<div class="profession">C++ Programmer</div>
+				</div>
+			</div>
+			<div class="menu">
+				<a href="/about"><div>About</div></a>
+				<a href="/skills"><div>Skills</div></a>
+				<a href="/projects"><div>Projects</div></a>
+				<a href="/articles"><div>Articles</div></a>
+			</div>
+		</div>
+		<div class="content">
+			{{ content }}
+		</div>
+	</body>
+</html>

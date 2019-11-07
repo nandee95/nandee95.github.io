@@ -1,0 +1,120 @@
+*
+{
+    margin:0;
+    padding:0;
+    outline:none;
+    color: #212529;
+}
+
+body
+{
+    background-color:#D6DDE1;
+}
+
+.titlebar
+{
+    width:100%;
+    padding:10px;
+    background-color:#F5F5F5;
+    box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
+    position:fixed;
+    display:flex;
+    flex-direction:row;
+    top:0;
+    left:0;
+    overflow: hidden;
+}
+
+.avatar
+{
+    max-width:100px;
+    border-radius: 50%;
+    flex: 1 1 0px;
+}
+
+.details
+{
+    font-family:quicksand;
+    margin-left:50px;
+    flex: 1 1 0px;
+    display: flex;
+    align-items: center;
+}
+
+.menu
+{
+    font-family:quicksand;
+    flex: 1 1 0px;
+    display: flex;
+    align-items: center;
+    padding-right:50px;
+}
+
+.menu div
+{
+    display:inline;
+    min-width: 300px;
+    transition: margin-top 1s;
+    padding:10px;
+}
+
+.menu a
+{
+    text-decoration: none;
+}
+
+.menu div:hover
+{
+    font-weight: bold;
+}
+
+.fullname
+{
+    font-weight: bold;
+}
+
+.content
+{
+    margin-top:120px;
+    padding:10px;
+}
+
+
+.post
+{
+    background: #FFF;
+    border-radius: 2px;
+    box-shadow: 0px 0px 4px #444;
+    width:1000px;
+    margin:10px auto 0 auto;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.post-title
+{
+    width:100%;
+    background:#F7F7F7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+@media only screen and (max-width: 650px) {
+    
+    .titlebar
+    {
+        flex-direction:column;
+    }
+
+    .avatar,.details,.menu
+    {
+        margin:5px auto 5px auto;
+        padding-right:0px;
+    }
+
+    
+    .content
+    {
+        margin-top:210px;
+    }
+}
