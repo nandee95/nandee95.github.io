@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{{ page.title }} / {{ site.title }}</title>
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand">
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css">
-	</head>
+		<title>{{ page.title }}</title>
 
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" type="text/css" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+		{% if page.mathjax %}
+		<!-- Mathjax -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=default" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			  tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			  }
+			});
+		  </script>
+		
+		<!-- End of Mathjax -->
+		{% endif %}
+
+		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/rouge.css">
+		<script type="text/javascript" src="{{ site.baseurl }}/assets/js/style.js"></script>
+
+		{% include analytics.html %}
+	</head>
 	<body>
 		<div class="titlebar">
-			<img class="avatar" src="/img/avatar.jpg">
-			<div class="details">
-				<div>
-					<div class="fullname">Nándor Szalma</div>
-					<div class="profession">C++ Programmer</div>
+			<a href="/">
+			<div class="profile">
+				<img src="/assets/img/avatar.jpg">
+				<div class="details">
+					<div class="fullname">{{ site.fullname }}</div>
+					<div class="profession">{{ site.profession }}</div>
+					{% if site.twitter %}
+					<a href="https://twitter.com/{{ site.twitter }}" target="_blank"><i class="fa fa-twitter social-icon"></i></a>
+					{% endif %}
+					{% if site.github %}
+					<a href="https://github.com/{{ site.github }}" target="_blank"><i class="fa fa-github social-icon"></i></a>
+					{% endif %}
+					{% if site.linkedin %}
+					<a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"><i class="fa fa-linkedin-square social-icon"></i></a>
+					{% endif %}
+					{% if site.stackoverflow %}
+					<a href="https://stackoverflow.com/users/{{ site.stackoverflow }}" target="_blank"><i class="fa fa-stack-overflow social-icon"></i></a>
+					{% endif %}
+					{% if site.thingiverse %}
+					<a href="https://thingiverse.com/{{ site.thingiverse }}" target="_blank"><i class="fa fa-circle-o fa-thingiverse social-icon"></i></a>
+					{% endif %}
 				</div>
 			</div>
+			</a>
 			<div class="menu">
-				<a href="/about"><div>About</div></a>
+				<a href="/"><div>About</div></a>
 				<a href="/skills"><div>Skills</div></a>
 				<a href="/projects"><div>Projects</div></a>
 				<a href="/articles"><div>Articles</div></a>
@@ -24,6 +65,10 @@
 		</div>
 		<div class="content">
 			{{ content }}
+		</div>
+		<div class="footer">
+			{% capture year %}{{ site.time | date: "%Y" }}{% endcapture %}
+			&copy; 2019{% if year != "2019" %}-{{ year }}{% endif %} Nándor Szalma
 		</div>
 	</body>
 </html>

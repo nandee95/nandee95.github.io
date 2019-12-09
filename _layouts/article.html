@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="page">
+    {% if page.categories contains "projects" %}
+    <div class="page-title">Projects</div>
+    {% else %}
+    <div class="page-title">Articles</div>
+    {% endif %}
+  </div>
+
+<article class="post md">
+  <a href="{{ page.url }}" class="post-link">
+    <div class="post-title">
+          {{ page.title }}
+          <div class="post-details">
+                  <i class="fa fa-calendar fa-fw"></i> {{ page.date | date: "%b %e, %Y" }}
+          </div>
+    </div>
+  </a>
+
+  <div class="entry">
+    {{ content }}
+  </div>
+</article>
+{% if page.comments %}
+<div class="comments">
+  {% include comments.html %}
+</div>
+{% endif %}

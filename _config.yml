@@ -1,12 +1,25 @@
+# Strings
 title: Nándor Szalma's website
-fullname: Nándor Szalma
-profession: Programmer
-email: n.a.
-description: Nándor Szalma's blog
 baseurl: ""
 url: ""
-twitter_username: nandee95
-github_username:  nandee95
-disqus: nndorszalma
 
-markdown: kramdown
+# Details
+fullname: Nándor Szalma
+profession: Software Engineer
+
+# Social
+twitter: nandee95
+github: nandee95
+stackoverflow : 7788244/nandee
+disqus: nandee95
+linkedin: n%C3%A1ndor-szalma-462b79150
+thingiverse: nandee95
+
+# Markdown settings
+markdown: redcarpet
+highlighter: rouge
+redcarpet:
+  extensions: [tables]
+
+# Time settings
+timezone: Europe/Budapest

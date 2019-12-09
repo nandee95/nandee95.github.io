@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Articles
+title: Projects
 ---
 <div class="page-title">{{ page.title }}</div>
 {% for post in site.posts %}
-{% if post.categories contains "articles" %}
+{% if post.categories contains "projects" %}
 <div class="post">
     <a href="{{ post.url }}" class="post-link">
         <div class="post-title">
