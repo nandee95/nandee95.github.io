@@ -16,10 +16,10 @@ linkedin: n%C3%A1ndor-szalma-462b79150
 thingiverse: nandee95
 
 # Markdown settings
-markdown: redcarpet
 highlighter: rouge
-redcarpet:
-  extensions: [tables]
+#markdown: redcarpet
+#redcarpet:
+#  extensions: [tables]
 
 # Time settings
 timezone: Europe/Budapest
