@@ -41,7 +41,7 @@ a:hover
     overflow: hidden;
     top:0;
     line-height:1em;
-    z-index:99999;
+    z-index:9999;
 }
 
 .footer
@@ -436,7 +436,7 @@ html{
 
   
 ul li::before {
-    content: "\2022";
+    content: "\25CB";
     color: #49F;
     display: inline-block;
     width: 1em;

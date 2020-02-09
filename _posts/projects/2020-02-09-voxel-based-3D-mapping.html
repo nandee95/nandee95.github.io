@@ -13,13 +13,15 @@ description: "We built a robot that is able to map the environment in 3D using t
 	We built a robot that is able to map the environment in 3D using the built in sensors. It can be remote controlled using the keyboard, tracks It's own position and orientation and able to navigate through the environment.
 </p>
 <h1>2. The hardware</h1>
+<a href="/assets/img/voxelmapper/PrintChart.svg" data-lightbox="project">
+<img src="/assets/img/voxelmapper/PrintChart.svg" width="20%" align="right" title="3D printing time"></a>
 <h2>2.1. 3D Printing</h2>
-<img src="/assets/img/voxelmapper/PrintChart.svg" width="20%" align="right" title="3D printing time">
 <p>
 	The parts were 3D printed using PLA(yellow and white parts) and PETG(black parts) using the Anet A8 3D printer. The body was designed by my partner but the battery compartment is my work. The printing took approximetly ~40 hours in total. Since the robot is larger than our print area It was constructed from two halves. The two control wheels and the planetary wheel was placed in a triangular shape for maximal stability. The Kinect's weitght is distributed over the two rear wheels and the battery module's weight keeps the robot in balance.
 </p>
+<a href="/assets/img/voxelmapper/Internals.jpg" data-lightbox="project">
+<img src="/assets/img/voxelmapper/Internals.jpg" width="20%" align="right" title="Internal parts"></a>
 <h2>2.2. Electronic design</h2>
-<img src="/assets/img/voxelmapper/Internals.jpg" width="20%" align="right" title="Internal parts">
 <p>
 	The robot is controlled by a Rasberry Pi 2B single board computer and uses a Kinect v1 sensor for depth imaging. The robot has an RGB LED indicator on the top sheet which serves as a feedback to the operator from the program's state. The motor is driven by two geared DC motors(modified servos) and controlled by software PWM through an L298 dual H-bridge.
 </p>
@@ -33,7 +35,9 @@ description: "We built a robot that is able to map the environment in 3D using t
 	Since the Kinect is not able to see objects closer than ~30 cm we installed 3 forward facing SR-04 ultrasonic sensors to fill the gap and 4 down facing optical proximity sensors to detect pits and stairs in front of and behind the whells. Those sensors allow us to later extend the functionality with autonomous operations.
 </p>
 <h2>2.3. Circuit</h2>
-<p>Coming soon...</p>
+<p>
+
+</p>
 <h1>3. Tracking</h1>
 <p>
 	The robot need to be able to track It's own position and orientation as precisely as possible. This information is used to project the captured images into a 3D virtual space. All of the i<sup>2</sup>c operations and sensor readings are placed in a seperate thread.
@@ -46,9 +50,12 @@ description: "We built a robot that is able to map the environment in 3D using t
 <p>
 	This step is done entirely in 2D. From the angle the wheel turned and the diameter of the wheel we can calculate which position the wheel is going to end up. By averaging those positions we get a displacement vector in the robot's space and by rotating this vector by the orientation we can calculate where the robot moved since the last step in the world.
 </p>
+<a href="/assets/img/voxelmapper/Software.png" data-lightbox="project">
+	<img src="/assets/img/voxelmapper/Software.png" width="20%" align="right" title="Screenshot of the software">
+</a>
 <h1>4. The software</h1>
 <p>
-	VoxelMapper is a C++ application which runs on a remote computer, receives the data from the robot through sockets and builds a 3D map from the received information. The program was built with modern OpenGL and OpenCL.
+	VoxelMapper is a C++ application which runs on a remote computer, receives the data from the robot through sockets and builds a 3D map from the received information. The program was built with modern OpenGL and OpenCL. In the top left corner we can see some details about the rendering and the sensors. In the bottom left corner there is a representation of the depth image.
 </p>
 <h2>4.1. Voxels</h2>
 <p>
@@ -59,6 +66,9 @@ description: "We built a robot that is able to map the environment in 3D using t
 	The camera can turned by right clicking on the window area and moved via WASD. Left click starts the path finding algorithm. The robot can be remote controlled via the arrow keys. C key brings the depth map to the center of the screen. F5 forces to recalculate all the meshes on the map (mainly for testing purposes). F6 clears all of the chunks. F11 toggles fullscreen. Escape closes the application.
 </p>
 <h2>4.3. Depth frame processing</h2>
+<a href="/assets/img/voxelmapper/ThreadPool.png" data-lightbox="project">
+	<img src="/assets/img/voxelmapper/ThreadPool.png" width="20%" align="right" title="Screenshot of the software">
+</a>
 <h3>4.3.1. Multi-threaded compression on the robot</h3>
 <p>
 	The depth frame is 640x480 and each pixel is a 2 byte unsigned integer. Each depth frame is consists of 600 kb of data. The frame needs to be compressed but we can’t use pre-existing image formats since image components are usually consists of a single byte. We ended up using zip compression which takes about 100ms on the highest performance settings. This would result in less than 10 fps so we needed to further improve the system. The program starts 3 threads just for compression after receiving each frame from the Kinect the data gets pushed into a queue and one thread wakes up to preform the compression task (Threadpool). The compression still takes the same time but we are able to do multiple compression simultaneously. The absolute highest fps we can reach this way is about ~25 fps but after introducing sensor readings and processing it dropped down to ~20 fps. As a result the ~12 Mbps network traffic(uncompressed) is reduced to ~2Mbps(compressed).
@@ -116,7 +126,8 @@ description: "We built a robot that is able to map the environment in 3D using t
 <a href="https://www.geeksforgeeks.org/bresenhams-algorithm-for-3-d-line-drawing/">Geeks For Geeks - Bresenham's algorithm for 3D line drawing</a><br>
 <a href="http://paulbourke.net/geometry/polygonise/">Poligonising a scalar field (Marcing cubes)</a><br>	
 <a href="https://github.com/hideakitai/MPU9250" target=_blank>MPU9250 Arduino library</a>
-
+<h2>8. Demo</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gJ57AG_LHbc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <table class="project-table">
 	<tr><td>Date:</td><td>2019 Dec - 2020 Feb</td></tr>
 	<tr><td>Partner:</td><td><a href="http://skrya.space">Tamás Szekeres</a></td></tr>
