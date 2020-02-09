@@ -3,6 +3,31 @@
 	<head>
 		<title>{{ page.title }}</title>
 
+		{% if page.tags %}
+		<meta name="keywords" content="{{ page.tags }}">   
+		{% endif %}  
+		
+
+		{% if page.title %}
+		<meta name="twitter:title" content="{{ page.title }}">
+		<meta property="og:title" content="{{ page.title }}">
+		{% endif %}
+
+		{% if page.description %}
+		<meta name="description" content="{{ page.description }}">
+		<meta property="og:description" content="{{ page.description }}"> 
+		<meta name="twitter:description" content="{{ page.description }}">
+		{% endif %}
+		
+
+		{% if page.thumbnail %}
+		<meta property="og:image" content="{{ site.baseurl }}{{ page.thumbnail }}">
+		<meta name="twitter:image" content="{{ site.baseurl }}{{ page.thumbnail }}">
+		{% endif %}
+
+		<meta name="twitter:card" content="summary">
+	<meta property="og:url" content="{{ site.baseurl }}">
+
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand">
