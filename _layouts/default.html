@@ -4,25 +4,35 @@
 		<title>{{ page.title }}</title>
 
 		{% if page.tags %}
-		<meta name="keywords" content="{{ page.tags }}">   
+		<meta name="keywords" content="{{ page.tags }}"> 
+		{% else %}  
+		<meta name="keywords" content="portfolio,programmer,cpp,nandor szalma"> 
 		{% endif %}  
 		
-
 		{% if page.title %}
 		<meta name="twitter:title" content="{{ page.title }}">
 		<meta property="og:title" content="{{ page.title }}">
+		{% else %}  
+		<meta name="twitter:title" content="{{ site.title }}">
+		<meta property="og:title" content="{{ site.title }}">
 		{% endif %}
 
 		{% if page.description %}
 		<meta name="description" content="{{ page.description }}">
 		<meta property="og:description" content="{{ page.description }}"> 
 		<meta name="twitter:description" content="{{ page.description }}">
+		{% else %}  
+		<meta name="description" content="{{ site.introduction }}">
+		<meta property="og:description" content="{{ site.introduction }}"> 
+		<meta name="twitter:description" content="{{ site.introduction }}">
 		{% endif %}
 		
-
 		{% if page.thumbnail %}
 		<meta property="og:image" content="{{ site.baseurl }}{{ page.thumbnail }}">
 		<meta name="twitter:image" content="{{ site.baseurl }}{{ page.thumbnail }}">
+		{% else %}  
+		<meta property="og:image" content="{{ site.baseurl }}/assets/img/share.jpg">
+		<meta name="twitter:image" content="{{ site.baseurl }}/assets/img/share.jpg">
 		{% endif %}
 
 		<meta name="twitter:card" content="summary">
