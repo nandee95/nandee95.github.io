@@ -73,7 +73,6 @@ a:hover
 .profile .details
 {
     display:inline-block;
-    height:100%;
 }
 
 .details a
@@ -216,6 +215,7 @@ a:hover
     .titlebar
     {
         flex-direction:column;
+        padding:0;
     }
 
     .avatar,.details,.menu
@@ -244,14 +244,7 @@ a:hover
     .fullname,.profession
     {
         display:inline;
-    }
-
-    .profile{
-        margin-top:-10px;
-        margin-bottom:20px;
-    }
-
-    
+    }    
     .skills .fa-fw
     {
         width:1em;

@@ -1,0 +1,36 @@
+---
+layout: article
+title: "Procedural open world game in C++"
+date: 2017-09-01 12:00:00 +0200
+categories: projects
+tags: game
+comments: true
+thumbnail: ZombieGame.jpg
+description: This is my first approach to a serious project in C++. The idea is that you can run around in a computer-generated world, kill monsters, meet other players and build a base to protect your belongings. The presented game was built on the object-oriented model, runs multiple threads to perform different tasks, uses shaders to improve the visual experience and has an isometric graphics(2.5D). I was using CMake to ensure easy port to Linux based systems on completion.
+---
+<h1>1. Introduction</h1>
+<p>
+    This is my first approach to a serious project in C++. The idea is that you can run around in a computer-generated world, kill monsters, meet other players and build a base to protect your belongings. The presented game was built on the object-oriented model, runs multiple threads to perform different tasks, uses shaders to improve the visual experience and has an isometric graphics(2.5D). I was using CMake to ensure easy port to Linux based systems on completion.
+</p>
+<h1>2. About the game</h1>
+<p>
+The game is using a <u>client-server model</u>.  The <u>game world</u> was generated using 2D noises. There were two kind of biomes: grassy and woody. The wind was also procedurally generated. The game world is completely my work. It is animated using geometry shaders. The game featured a fully functional chat system and a basic inventory system.
+</p>
+<h1>3. Conclusions</h1>
+<p>
+Since this was my first big project I wasn't expecting too much. I was quickly facing issues that would require whole rework to be fixed. The performance was horrible because of the high number of drawcalls. This could be solved by z-ordering or instancing but none of those were supported by the graphics library I was using. I made a version where I put every piece of the grass into a single drawcall but without the proper ordering it just didn't feel the same.
+</p>
+<h1>4. Video</h1>
+This is the less performant the graphically correct version of the final game.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cIgsZLBciN4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<table class="project-table">
+	<tr><td>Date:</td><td>2017 Summer</td></tr>
+	<tr><td>Language:</td><td>C++</td></tr>
+	<tr><td>Libraries:</td><td>SFML, Spine 2D, SQLiteCpp, libnoise</td></tr>
+	<tr><td>Softwares:</td><td>Krita, Spine 2D</td></tr>
+	<tr><td>Source code:</td><td>
+		<a href="https://github.com/nandee95/ZombieGame">ZombieGame</a>
+	</td>
+	</tr>
+</table>
