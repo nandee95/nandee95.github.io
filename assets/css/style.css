@@ -10,7 +10,7 @@
 body
 {
     background: #FFF;
-    background: linear-gradient(to right, rgba(68,204,136,1) 0%, rgba(34,189,255,1) 100%);
+    background: linear-gradient(to right, rgba(68,104,136,1) 0%, rgba(34,189,255,1) 100%);
     font-family: lato;
 }
 
@@ -120,7 +120,7 @@ a:hover
 {
     width:calc( 100% - 20px );
     background: #FFF;
-    background: linear-gradient(to right, rgba(34,189,255,1.0) 0%, rgba(34,189,255,0) 50%);
+    background-color: rgba(68, 204, 136, 1);
     border-radius: 5px;
     padding:10px;
     margin-bottom:10px;
@@ -137,10 +137,15 @@ a:hover
 .post-details
 {
     float:right;
-    margin-right:30px;
     text-shadow: none;
     font-size:0.7em;
     font-family:quicksand;
+    padding:4px;
+}
+.post-details, .post-details i
+{
+    color:white;
+    text-shadow: 0 0 5px #000;
 }
 
 /* Error page */
@@ -227,18 +232,6 @@ a:hover
     .menu div:hover
     {
         animation:none;
-    }
-
-    
-    .post-title
-    {
-        background: rgba(34,189,255,1.0);
-    }
-
-    .post-details, .post-details i
-    {
-        color:white;
-        text-shadow: 0 0 5px #000;
     }
 
     .fullname,.profession
