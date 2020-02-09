@@ -12,6 +12,12 @@ body
     background: #FFF;
     background: linear-gradient(to right, rgba(68,104,136,1) 0%, rgba(34,189,255,1) 100%);
     font-family: lato;
+    overflow-y: hidden;
+}
+
+html
+{
+    overflow-y: hidden;
 }
 
 a
