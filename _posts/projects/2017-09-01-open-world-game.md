@@ -5,6 +5,8 @@ date: 2017-09-01 12:00:00 +0200
 categories: projects
 tags: game
 comments: true
+thumbnail: ZombieGame.jpg
+description: This is my first approach to a serious project in C++. The idea is that you can run around in a computer-generated world, kill monsters, meet other players and build a base to protect your belongings. The presented game was built on the object-oriented model, runs multiple threads to perform different tasks, uses shaders to improve the visual experience and has an isometric graphics(2.5D). I was using CMake to ensure easy port to Linux based systems on completion.
 ---
 This is my first approach to a serious project in C++. The idea is that you can run around in a computer-generated world, kill monsters, meet other players and build a base to protect your belongings. The presented game was built on the object-oriented model, runs multiple threads to perform different tasks, uses shaders to improve the visual experience and has an isometric graphics(2.5D). I was using CMake to ensure easy port to Linux based systems on completion.
 

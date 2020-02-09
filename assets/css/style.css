@@ -463,3 +463,26 @@ p
     text-indent: 1em;
     margin-bottom:5px;
 }
+
+.project-table
+{
+    width:80%;
+    margin:20px auto 0 auto;
+}
+
+.project-table td:first-child
+{
+    width:150px;
+}
+
+.content img
+{
+    margin:10px;
+}
+
+.project-thumbnail
+{
+    width:30%;
+    padding:0;
+    display:inline-block;
+}
