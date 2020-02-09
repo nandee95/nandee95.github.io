@@ -14,13 +14,13 @@ description: "We built a robot that is able to map the environment in 3D using t
 </p>
 <h1>2. The hardware</h1>
 <a href="/assets/img/voxelmapper/PrintChart.svg" data-lightbox="project">
-<img src="/assets/img/voxelmapper/PrintChart.svg" width="20%" align="right" title="3D printing time"></a>
+<img src="/assets/img/voxelmapper/PrintChart.svg" align="right" title="3D printing time" class="illustration"></a>
 <h2>2.1. 3D Printing</h2>
 <p>
 	The parts were 3D printed using PLA(yellow and white parts) and PETG(black parts) using the Anet A8 3D printer. The body was designed by my partner but the battery compartment is my work. The printing took approximetly ~40 hours in total. Since the robot is larger than our print area It was constructed from two halves. The two control wheels and the planetary wheel was placed in a triangular shape for maximal stability. The Kinect's weitght is distributed over the two rear wheels and the battery module's weight keeps the robot in balance.
 </p>
 <a href="/assets/img/voxelmapper/Internals.jpg" data-lightbox="project">
-<img src="/assets/img/voxelmapper/Internals.jpg" width="20%" align="right" title="Internal parts"></a>
+<img src="/assets/img/voxelmapper/Internals.jpg" align="right" title="Internal parts" class="illustration"></a>
 <h2>2.2. Electronic design</h2>
 <p>
 	The robot is controlled by a Rasberry Pi 2B single board computer and uses a Kinect v1 sensor for depth imaging. The robot has an RGB LED indicator on the top sheet which serves as a feedback to the operator from the program's state. The motor is driven by two geared DC motors(modified servos) and controlled by software PWM through an L298 dual H-bridge.
@@ -51,7 +51,7 @@ description: "We built a robot that is able to map the environment in 3D using t
 	This step is done entirely in 2D. From the angle the wheel turned and the diameter of the wheel we can calculate which position the wheel is going to end up. By averaging those positions we get a displacement vector in the robot's space and by rotating this vector by the orientation we can calculate where the robot moved since the last step in the world.
 </p>
 <a href="/assets/img/voxelmapper/Software.png" data-lightbox="project">
-	<img src="/assets/img/voxelmapper/Software.png" width="20%" align="right" title="Screenshot of the software">
+	<img src="/assets/img/voxelmapper/Software.png" align="right" title="Screenshot of the software" class="illustration">
 </a>
 <h1>4. The software</h1>
 <p>
@@ -67,7 +67,7 @@ description: "We built a robot that is able to map the environment in 3D using t
 </p>
 <h2>4.3. Depth frame processing</h2>
 <a href="/assets/img/voxelmapper/ThreadPool.png" data-lightbox="project">
-	<img src="/assets/img/voxelmapper/ThreadPool.png" width="20%" align="right" title="Screenshot of the software">
+	<img src="/assets/img/voxelmapper/ThreadPool.png" align="right" title="Screenshot of the software" class="illustration">
 </a>
 <h3>4.3.1. Multi-threaded compression on the robot</h3>
 <p>
@@ -88,12 +88,12 @@ description: "We built a robot that is able to map the environment in 3D using t
 	<br>1	→ turned into solid
 	<br>The results are held in GPU memory and passed to the next kernel.
 </p>
-<h3>4.3.4. Chunk upate</h3>
+<h3>4.3.4. Chunk update</h3>
 <p>
 	This information needs to be transformed into our chunk system. The next kernel receives the projected data and 5*5(25 in total) chunks around the robot. It’s only job is to perform the changes we calculated earlier on the chunks.
 </p>
 <a href="/assets/img/voxelmapper/Mesh.png" data-lightbox="project">
-	<img src="/assets/img/voxelmapper/Mesh.png" width="20%" align="right" title="Early development screenshot">
+	<img src="/assets/img/voxelmapper/Mesh.png" align="right" title="Early development screenshot" class="illustration">
 </a>
 <h3>4.3.5. Mesh generation</h3>
 <p>
@@ -130,33 +130,33 @@ description: "We built a robot that is able to map the environment in 3D using t
 <a href="http://paulbourke.net/geometry/polygonise/">Poligonising a scalar field (Marcing cubes)</a><br>	
 <a href="https://github.com/hideakitai/MPU9250" target=_blank>MPU9250 Arduino library</a>
 <h1>8. Demo</h1>
-<div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gJ57AG_LHbc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br></div>
+<div class="yt-video">
+<iframe src="https://www.youtube.com/embed/gJ57AG_LHbc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br></div>
 <h1>9. Gallery</h1>
 <div class="gallery">
 	<a href="/assets/img/voxelmapper/Gallery1.jpg" data-lightbox="project" class="gallery-item">
-		<img src="/assets/img/voxelmapper/Gallery1.jpg" width="20%">
+		<img src="/assets/img/voxelmapper/Gallery1.jpg">
 	</a>
 	<a href="/assets/img/voxelmapper/Gallery2.jpg" data-lightbox="project" class="gallery-item">
-		<img src="/assets/img/voxelmapper/Gallery2.jpg" width="20%">
+		<img src="/assets/img/voxelmapper/Gallery2.jpg">
 	</a>
 	<a href="/assets/img/voxelmapper/Gallery3.jpg" data-lightbox="project" class="gallery-item">
-		<img src="/assets/img/voxelmapper/Gallery3.jpg" width="20%">
+		<img src="/assets/img/voxelmapper/Gallery3.jpg">
 	</a>
 	<a href="/assets/img/voxelmapper/Gallery4.jpg" data-lightbox="project" class="gallery-item">
-		<img src="/assets/img/voxelmapper/Gallery4.jpg" width="20%">
+		<img src="/assets/img/voxelmapper/Gallery4.jpg">
 	</a>
 	<a href="/assets/img/voxelmapper/Gallery5.jpg" data-lightbox="project" class="gallery-item">
-		<img src="/assets/img/voxelmapper/Gallery5.jpg" width="20%">
+		<img src="/assets/img/voxelmapper/Gallery5.jpg">
 	</a>
 	<a href="/assets/img/voxelmapper/Gallery6.jpg" data-lightbox="project" class="gallery-item">
-		<img src="/assets/img/voxelmapper/Gallery6.jpg" width="20%">
+		<img src="/assets/img/voxelmapper/Gallery6.jpg">
 	</a>
 	<a href="/assets/img/voxelmapper/Gallery7.jpg" data-lightbox="project" class="gallery-item">
-		<img src="/assets/img/voxelmapper/Gallery7.jpg" width="20%">
+		<img src="/assets/img/voxelmapper/Gallery7.jpg">
 	</a>
 	<a href="/assets/img/voxelmapper/Gallery8.jpg" data-lightbox="project" class="gallery-item">
-		<img src="/assets/img/voxelmapper/Gallery8.jpg" width="20%">
+		<img src="/assets/img/voxelmapper/Gallery8.jpg">
 	</a>
 
 </div>
