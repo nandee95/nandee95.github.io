@@ -10,7 +10,7 @@ layout: default
     {% endif %}
   </div>
 
-<article class="post md">
+<div class="post md">
   <a href="{{ page.url }}" class="post-link">
     <div class="post-title">
           {{ page.title }}
@@ -19,11 +19,10 @@ layout: default
           </div>
     </div>
   </a>
-
   <div class="entry">
     {{ content }}
   </div>
-</article>
+</div>
 {% if page.comments %}
 <div class="comments">
   {% include comments.html %}
