@@ -92,6 +92,9 @@ description: "We built a robot that is able to map the environment in 3D using t
 <p>
 	This information needs to be transformed into our chunk system. The next kernel receives the projected data and 5*5(25 in total) chunks around the robot. It’s only job is to perform the changes we calculated earlier on the chunks.
 </p>
+<a href="/assets/img/voxelmapper/Mesh.png" data-lightbox="project">
+	<img src="/assets/img/voxelmapper/Mesh.png" width="20%" align="right" title="Early development screenshot">
+</a>
 <h3>4.3.5. Mesh generation</h3>
 <p>
 	The chunks are still defined with a 3D array. The marching cubes algorithm runs in an OpenCL kernel and used to generate a closed 3D mesh. 
