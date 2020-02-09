@@ -472,3 +472,25 @@ p
     padding:0;
     display:inline-block;
 }
+
+.gallery
+{
+    display:flex;
+    flex-wrap:wrap;
+flex-direction: row;
+}
+
+.gallery-item
+{
+    flex-grow: 1;
+  flex-basis: 20%;
+  margin: 5px;
+  align-items: center;
+}
+
+.gallery-item img
+{
+    width:100%;
+    padding:0;
+    margin:0;
+}
