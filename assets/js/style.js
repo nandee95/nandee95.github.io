@@ -2,7 +2,7 @@ $(()=>{
     $(".md a:not(.post-link)").attr("target","_blank");
     $(".md th:contains(\":hidden\")").hide();
 
-    var rateLabel = ["Varying", "Beginner", "dunno", "dunno", "dunno", "Experienced"];
+    var rateLabel = ["Varying", "Beginner", "Avarage", "Skilled", "Specialist", "Expert"];
     $(".rating").each(function (r) {
         var val = $(this).attr("value");
         $(this).attr("title", rateLabel[val]);
